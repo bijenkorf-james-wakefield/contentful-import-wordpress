@@ -1,0 +1,4 @@
+node_modules
+
+#Dot Environment files
+.env.*
