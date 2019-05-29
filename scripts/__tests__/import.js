@@ -3,6 +3,10 @@ const CONTENTFUL = require("../config");
 jest.mock("contentful-management");
 jest.mock("fs");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const Importer = require("../import");
 const Promise = require("bluebird");
 // const contentful = require('contentful-management')
@@ -40,9 +44,9 @@ describe("Correctly configured", () => {
 
   beforeAll(() => {
     TestImporter = new Importer(
-      CONTENTFUL.ACCESS_TOKEN,
-      CONTENTFUL.SPACE_ID,
-      CONTENTFUL.SYS_ID
+      process.env.ACCESS_TOKEN,
+      process.env.SPACE_ID,
+      process.env.SYS_ID
     );
 
     return TestImporter.init();
