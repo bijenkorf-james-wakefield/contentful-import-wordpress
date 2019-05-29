@@ -1,5 +1,3 @@
-const CONTENTFUL = require("../config");
-
 jest.mock("contentful-management");
 jest.mock("fs");
 
