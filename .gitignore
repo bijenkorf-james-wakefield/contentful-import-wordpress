@@ -1,6 +1,11 @@
+# node modules should be installed locally
 node_modules
 
+# Content should not be checked in
 content
+
+#Editor
+.vscode
 
 #Dot Environment files
 .env.*
