@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Correctly configured getContentTypes: response matches snapshot 1`] = `Promise {}`;
+
+exports[`Correctly configured mapAuthor mapping should match snapshot 1`] = `
+Object {
+  "fields": Object {
+    "display_name": Object {
+      "en": "Queeny van Raaij",
+    },
+    "email": Object {
+      "en": "Queeny.Raaijvan@deBijenkorf.nl",
+    },
+    "first_name": Object {
+      "en": "Queeny",
+    },
+    "id": "2",
+    "last_name": Object {
+      "en": "van Raaij",
+    },
+    "slug": Object {
+      "en": "queeny-van-raaij",
+    },
+  },
+}
+`;
+
+exports[`Correctly configured mapPost: should create an object with the en locale 1`] = `
+Object {
+  "fields": Object {
+    "body": Object {
+      "en": Object {
+        "content": Array [
+          Object {
+            "content": Array [
+              Object {
+                "data": Object {},
+                "marks": Array [],
+                "nodeType": "text",
+                "value": "
+				<ol class=\\"anchor-list\\">
+<li><a href=\\"#content\\">Contents</a></li>
+<li><a href=\\"#copyright\\">Copyright and trademarks</a></li>
+<li><a href=\\"#personal\\">Personal information</a></li>
+</ol>
+<h2>Algemeen</h2>
+Op de toegang tot en het gebruik van deze website van Magazijn de Bijenkorf B.V (de Bijenkorf) zijn, naast de toepasselijke wetgeving, de volgende bepalingen en voorwaarden van toepassing.
+<ol>
+<li id=\\"content\\">Contents
+<ol>
+<li>This web site has been prepared solely for the purpose of providing information about the logistic<a href=\\"http://www.clubink.se\\">clubink/a> processes of de Bijenkorf.</li>
+<li>The information contained in this web site has been compiled in good faith by de Bijenkorf and is provided as is.</li>
+<li>De Bijenkorf gives no representations or warranties, either express or implied, as to the <a href=\\"http://www.clubink.se\\">clubink.se</a> completeness, timeliness or accuracy of any information it contains.</li>
+<li>Neither de Bijenkorf nor any of its officers, employees or agents shall be liable for any direct, incidental, consequential, indirect or punitive damages or losses arising out of any access to or use of or reliance upon (information contained in) this web site or any site linked to it, including but not limited to viruses that may infect computer equipment and/or software..</li>
+<li>De Bijenkorf is not responsible for the contents of any off-site pages or any other web sites linked to or from this Bijenkorf Logistics web site.</li>
+<li>De Bijenkorf may at any time and without notice, make any changes and corrections to the web site and to these terms and conditions.</li>
+</ol>
+</li>
+<li id=\\"copyright\\">Copyright and trademarks
+<ol>
+<li>All copyright and other intellectual property rights in the information contained in this web site (including but not limited to text and images) are owned by de Bijenkorf.</li>
+<li>Persons accessing this web site are permitted to display, store, reproduce and distribute extracts of this web site, but in all cases only for personal, informational and non-commercial purposes. No reproduction may be sold or distributed for commercial gain nor be modified or incorporated in any other work, publication or web site. No other rights or licenses are assigned or shall otherwise pass to persons accessing this web site.</li>
+<li>All trademarks and emblems displayed on this web site are owned by de Bijenkorf.</li>
+</ol>
+</li>
+<li id=\\"personal\\">Personal information
+<ol>
+<li>Visits to the site may be tracked through the use of 'cookies'. Cookies are pieces of information that a web site transfers to a computer's hard drive, for instance for record-keeping purposes. The use of cookies is an industry standard.</li>
+<li>The information collected during use of this web site is used by de Bijenkorf to monitor the use of the web site and to help its further development.</li>
+<li>De Bijenkorf never uses cookies to retrieve information from a computer that was not originally sent in a cookie.</li>
+<li>Most browsers are initially set to accept cookies. If preferred, the browser settings can be changed to refuse cookies. However, in doing so, one may not be able to fully utilise the site.</li>
+</ol>
+</li>
+</ol>
+Access to and use of de Bijenkorf Logistics web site updated: June 28, 2016, subject to Internet legal notices.",
+              },
+            ],
+            "data": Object {},
+            "nodeType": "paragraph",
+          },
+        ],
+        "data": Object {},
+        "nodeType": "document",
+      },
+    },
+    "id": "39",
+    "slug": Object {
+      "en": "disclaimer",
+    },
+    "title": Object {
+      "en": "Disclaimer",
+    },
+  },
+}
+`;
+
+exports[`Correctly configured mapPost: should create an object with the nl locale 1`] = `
+Object {
+  "fields": Object {
+    "body": Object {
+      "nl": Object {
+        "content": Array [
+          Object {
+            "content": Array [
+              Object {
+                "data": Object {},
+                "marks": Array [],
+                "nodeType": "text",
+                "value": "
+				<h2>Distributiecentrum de Bijenkorf Woerden</h2>
+Middellandbaan 1b
+3447 GP Woerden
+tel.: 088-245 4900
+e-mail: <a href=\\"mailto:dbwmiddelland@debijenkorf.nl\\">deliveries@debijenkorf.nl</a>
+
+&nbsp;
+<h2>Magazijn de Bijenkorf B.V. Servicekantoor Amsterdam</h2>
+Hoogoorddreef 11
+1101 BA Amsterdam ZO
+
+Postbus 12870
+1100 AW Amsterdam ZO
+
+tel.: 088-245 4000
+
+BTW nummer: NL 003177397B01
+EORI nummer: NL 003177397
+Douanekantoor Nijmegen/Kantoor De Lutte - NL000851
+
+<span style=\\"font-size: 9pt; color: #333333; font-family: Arial;\\">ABN AMRO BANK: </span><span style=\\"font-size: 9pt; font-family: Arial;\\"><span style=\\"color: #000000;\\">50.11.34.476</span></span><span style=\\"font-size: 8pt; color: red; font-family: Arial;\\"></span><span style=\\"font-size: 9pt; color: #333333; font-family: Arial;\\">
+IBAN: </span><span style=\\"font-size: 10pt;\\"><span style=\\"color: #000000;\\">NL16ABNA0501134476</span></span><span style=\\"font-size: 8pt; color: red; font-family: Arial;\\"></span><span style=\\"font-size: 9pt; color: #333333; font-family: Arial;\\">
+BIC: </span><span style=\\"font-size: 10pt;\\"><span style=\\"color: #000000;\\">ABNANL2A</span></span><span style=\\"font-size: 8pt; color: red; font-family: Arial;\\"></span>
+
+<span style=\\"font-size: 9pt; color: #333333; font-family: Arial;\\">KvK nummer: 33116577</span>
+
+&nbsp;
+<h2>Monsterzendingen:</h2>
+De Bijenkorf
+Inkoop afdeling/naam inkoper
+Hoogoorddreef 11
+1101 BA Amsterdam ZO
+tel.: 088-245 4000
+
+&nbsp;",
+              },
+            ],
+            "data": Object {},
+            "nodeType": "paragraph",
+          },
+        ],
+        "data": Object {},
+        "nodeType": "document",
+      },
+    },
+    "id": "282",
+    "slug": Object {
+      "nl": "contact",
+    },
+    "title": Object {
+      "nl": "Contact",
+    },
+  },
+}
+`;
