@@ -1,4 +1,4 @@
-const parser = require('parse5')
+const parser = require('xml2json')
 const merge = require('deepmerge')
 
 let options = {
@@ -127,6 +127,13 @@ function getRelatedEntries (input) {
  * @returns {array} input mapped to a branch
  */
 
+let tmp = {
+  p: {
+    $t:
+      'excepteur sint occaecat cupidatat non proident deserunt mollit anim id est',
+    a: { href: 'https://www.debijenkorf.nl', $t: 'sunt in culpa qui officia' }
+  }
+}
 function traverse (input = {}) {
   // console.log('input', input)
 
@@ -170,7 +177,7 @@ function traverse (input = {}) {
 }
 
 function parseHTML (input) {
-  return parser.parse(input)
+  return parser.toJson(input, options)
 }
 
 function getLeaf (value) {
