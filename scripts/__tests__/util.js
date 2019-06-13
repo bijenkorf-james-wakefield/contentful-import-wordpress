@@ -73,6 +73,20 @@ describe('Utils -  withFields', () => {
 
     expect(result).toEqual(expected)
   })
+  test('should return the correct data structure for inline element like anchors', () => {
+    // nested nodes expect a nested response.
+    // e.g. list item containing paragraph
+    let input =
+      '<p>excepteur sint occaecat cupidatat non proident <a href="https://www.debijenkorf.nl">sunt in culpa qui officia</a>deserunt mollit anim id est</p>'
+    let expected = fixture.getRichTextHyperlink()
+    let result
+
+    input = util.parseHTML(input)
+    console.log('input', input)
+    result = util.getRichText(input)
+    console.log('result', result)
+    expect(result).toEqual(expected)
+  })
 })
 
 describe.skip('Utils - mergeEntry', () => {
