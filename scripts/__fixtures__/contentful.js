@@ -1,82 +1,166 @@
 // Paragraph
-const richTextNode = {
-  data: {},
-  content: [
-    {
-      data: {},
-      marks: [],
-      value: "",
-      nodeType: "text",
-    },
-  ],
-  nodeType: "",
-};
 
-const richTextWrappedNode = {
-  data: {},
-  content: [richTextNode],
-  nodeType: "",
-};
+const getRichTextListItem = value => {
+  return {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            content: [
+              {
+                data: {},
+                marks: [],
+                value,
+                nodeType: 'text'
+              }
+            ],
+            nodeType: 'paragraph'
+          }
+        ],
+        nodeType: 'list-item'
+      }
+    ],
+    nodeType: 'document'
+  }
+}
 
-module.exports.richTextListItem = {
-  data: {},
-  content: [
-    {
-      data: {},
-      content: [
-        {
-          data: {},
-          marks: [],
-          value: "Excepteur sint occaecat cupidatat non proident,",
-          nodeType: "text",
-        },
-      ],
-      nodeType: "paragraph",
-    },
-  ],
-  nodeType: "list-item",
-};
+const getRichTextNode = (value, nodeType) => {
+  return {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value,
+            nodeType: 'text'
+          }
+        ],
+        nodeType
+      }
+    ],
+    nodeType: 'document'
+  }
+}
 
-const richTextHyperlink = {
-  data: {},
-  content: [
-    {
-      data: {},
-      marks: [],
-      value: "",
-      nodeType: "text",
-    },
-    {
-      data: {
-        uri: "mailto:email@example.com",
-      },
-      content: [
-        {
-          data: {},
-          marks: [],
-          value: "email@example.com",
-          nodeType: "text",
-        },
-      ],
-      nodeType: "hyperlink",
-    },
-    {
-      data: {},
-      marks: [],
-      value: "",
-      nodeType: "text",
-    },
-  ],
-  nodeType: "paragraph",
-};
+const getUnorderedList = () => {
+  return {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            content: [
+              {
+                data: {},
+                content: [
+                  {
+                    data: {},
+                    marks: [],
+                    value: 'Excepteur sint occaecat cupidatat non proident,',
+                    nodeType: 'text'
+                  }
+                ],
+                nodeType: 'paragraph'
+              }
+            ],
+            nodeType: 'list-item'
+          },
+          {
+            data: {},
+            content: [
+              {
+                data: {},
+                content: [
+                  {
+                    data: {},
+                    marks: [],
+                    value: 'sunt in culpa qui officia',
+                    nodeType: 'text'
+                  }
+                ],
+                nodeType: 'paragraph'
+              }
+            ],
+            nodeType: 'list-item'
+          },
+          {
+            data: {},
+            content: [
+              {
+                data: {},
+                content: [
+                  {
+                    data: {},
+                    marks: [],
+                    value: 'deserunt mollit anim id est laborum.',
+                    nodeType: 'text'
+                  }
+                ],
+                nodeType: 'paragraph'
+              }
+            ],
+            nodeType: 'list-item'
+          }
+        ],
+        nodeType: 'unordered-list'
+      }
+    ],
+    nodeType: 'document'
+  }
+}
+// '<p>excepteur sint occaecat cupidatat non proident <a href="https://www.debijenkorf.nl">sunt in culpa qui officia</a>deserunt mollit anim id est</p>'
+const getRichTextHyperlink = () => {
+  return {
+    data: {},
+    content: [
+      {
+        data: {},
+        content: [
+          {
+            data: {},
+            marks: [],
+            value: 'excepteur sint occaecat cupidatat non proident',
+            nodeType: 'text'
+          },
+          {
+            data: {
+              uri: 'https://www.debijenkorf.nl'
+            },
+            content: [
+              {
+                data: {},
+                marks: [],
+                value: 'sunt in culpa qui officia',
+                nodeType: 'text'
+              }
+            ],
+            nodeType: 'hyperlink'
+          },
+          {
+            data: {},
+            marks: [],
+            value: 'deserunt mollit anim id est',
+            nodeType: 'text'
+          }
+        ],
+        nodeType: 'paragraph'
+      }
+    ],
+    nodeType: 'document'
+  }
+}
 
-module.exports.richTextModel = (
-  text = "",
-  nodeType = "paragraph",
-  wrapped = false
-) => {
-  let data = Object.assign({}, richTextNode);
-  data.nodeType = nodeType;
-  data.content[0].value = text;
-  return data;
-};
+module.exports = {
+  getUnorderedList,
+  getRichTextHyperlink,
+  getRichTextListItem,
+  getRichTextNode
+}
