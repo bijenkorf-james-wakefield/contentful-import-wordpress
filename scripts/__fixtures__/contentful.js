@@ -27,12 +27,12 @@ const getRichTextListItem = value => {
   }
 }
 
-const getRichTextNode = (value, nodeType) => {
+const getRichTextNode = (value, nodeType, data = {}) => {
   return {
     data: {},
     content: [
       {
-        data: {},
+        data,
         content: [
           {
             data: {},
@@ -127,7 +127,7 @@ const getRichTextHyperlink = () => {
           {
             data: {},
             marks: [],
-            value: 'excepteur sint occaecat cupidatat non proident',
+            value: 'excepteur sint occaecat cupidatat non proident ',
             nodeType: 'text'
           },
           {

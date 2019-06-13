@@ -8,27 +8,18 @@ describe('Utils -  withFields', () => {
     let result
     input = util.parseHTML(input)
     result = util.getRichText(input)
-
     expect(result).toEqual(expected)
   })
 
-  test('should return an object matching fixture for Heading 1', () => {
-    let input = '<h1>Orange</h1>'
-    let expected = fixture.getRichTextNode('Orange', 'heading-1')
+  test('should return an object matching fixture for element with attributes', () => {
+    let input =
+      '<a title="A link" href="https://en.wikipedia.org/wiki/Cucumber">Cucumber</a>'
+    let expected = fixture.getRichTextNode('Cucumber', 'hyperlink', {
+      uri: 'https://en.wikipedia.org/wiki/Cucumber'
+    })
     let result
     input = util.parseHTML(input)
     result = util.getRichText(input)
-
-    expect(result).toEqual(expected)
-  })
-
-  test('should return an object matching fixture for Heading 6', () => {
-    let input = '<h6>Kiwi</h6>'
-    let expected = fixture.getRichTextNode('Kiwi', 'heading-6')
-    let result
-    input = util.parseHTML(input)
-    result = util.getRichText(input)
-
     expect(result).toEqual(expected)
   })
 
@@ -53,27 +44,17 @@ describe('Utils -  withFields', () => {
     // nested nodes expect a nested response.
     // e.g. list item containing paragraph
     let input =
-      '<ul><li><p>Excepteur sint occaecat cupidatat non proident, </p></li><li><p>sunt in culpa qui officia </p></li><li><p>deserunt mollit anim id est laborum.</p></li></ul>'
+      '<ul><li><p>Excepteur sint occaecat cupidatat non proident,</p></li><li><p>sunt in culpa qui officia</p></li><li><p>deserunt mollit anim id est laborum.</p></li></ul>'
     let expected = fixture.getUnorderedList()
     let result
     input = util.parseHTML(input)
     result = util.getRichText(input)
+    // console.log('result', result)
 
     expect(result).toEqual(expected)
   })
-  test('should return the correct data structure for unordered list', () => {
-    // nested nodes expect a nested response.
-    // e.g. list item containing paragraph
-    let input =
-      '<ul><li><p>Excepteur sint occaecat cupidatat non proident, </p></li><li><p>sunt in culpa qui officia </p></li><li><p>deserunt mollit anim id est laborum.</p></li></ul>'
-    let expected = fixture.getUnorderedList()
-    let result
-    input = util.parseHTML(input)
-    result = util.getRichText(input)
 
-    expect(result).toEqual(expected)
-  })
-  test('should return the correct data structure for inline element like anchors', () => {
+  test('should return the correct data structure for inline element like anchors in parents', () => {
     // nested nodes expect a nested response.
     // e.g. list item containing paragraph
     let input =
@@ -82,9 +63,7 @@ describe('Utils -  withFields', () => {
     let result
 
     input = util.parseHTML(input)
-    console.log('input', input)
     result = util.getRichText(input)
-    console.log('result', result)
     expect(result).toEqual(expected)
   })
 })
@@ -145,6 +124,24 @@ describe('Utils - getRelatedEntries', () => {
 
     result = util.getRelatedEntries(input)
 
+    expect(result).toStrictEqual(expected)
+  })
+})
+
+describe('getNodeType', () => {
+  test('should return paragraph', () => {
+    let expected = 'paragraph'
+    let result
+    let input = 'p'
+    result = util.getNodeType(input)
+    expect(result).toStrictEqual(expected)
+  })
+
+  test('should return empty string if no match', () => {
+    let expected = ''
+    let result
+    let input = 'abracadabra'
+    result = util.getNodeType(input)
     expect(result).toStrictEqual(expected)
   })
 })
