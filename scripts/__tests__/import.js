@@ -9,7 +9,7 @@ const Importer = require("../import");
 const Promise = require("bluebird");
 // const contentful = require('contentful-management')
 
-describe("Incorrectly configured", () => {
+describe.skip("Incorrectly configured", () => {
   let TestImporter;
   beforeAll(async () => {
     TestImporter = new Importer(null, null, null);
@@ -37,7 +37,7 @@ describe("Incorrectly configured", () => {
   });
 });
 
-describe("Correctly configured", () => {
+describe.skip("Correctly configured", () => {
   let TestImporter;
 
   beforeAll(() => {

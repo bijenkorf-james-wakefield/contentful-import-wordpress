@@ -1,9 +1,14 @@
-const CONFIG = require("./config");
 const Importer = require("./import");
 
+const dotFile = process.env.NODE_ENV
+  ? `.env.${process.env.NODE_ENV}`
+  : `.env.development`;
+
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: dotFile,
 });
+
+console.log("Environment", dotFile);
 
 let contentfulImporter = new Importer(
   process.env.ACCESS_TOKEN,
