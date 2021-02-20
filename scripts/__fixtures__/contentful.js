@@ -27,7 +27,77 @@ const getRichTextListItem = value => {
   }
 }
 
-const getRichTextNode = (value, nodeType, data = {}) => {
+const getRichTextParagraphWithInlineType = () => {
+  return {
+    nodeType: 'document',
+    data: {},
+    content: [
+      {
+        nodeType: 'paragraph',
+        content: [
+          {
+            nodeType: 'text',
+            data: {},
+            value: 'Lorem ipsum ',
+            marks: []
+          },
+          {
+            nodeType: 'text',
+            value: 'dolor',
+            marks: [
+              {
+                type: 'bold'
+              }
+            ],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: ' sit ',
+            marks: [],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: 'amet',
+            marks: [
+              {
+                type: 'italic'
+              }
+            ],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: ', ',
+            marks: [],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value: 'consectetur adipiscing',
+            marks: [
+              {
+                type: 'underline'
+              }
+            ],
+            data: {}
+          },
+          {
+            nodeType: 'text',
+            value:
+              ' elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            marks: [],
+            data: {}
+          }
+        ],
+        data: {}
+      }
+    ]
+  }
+}
+
+const getRichTextNode = (value, nodeType, data = {}, marks = []) => {
   return {
     data: {},
     content: [
@@ -36,7 +106,7 @@ const getRichTextNode = (value, nodeType, data = {}) => {
         content: [
           {
             data: {},
-            marks: [],
+            marks,
             value,
             nodeType: 'text'
           }
@@ -162,5 +232,6 @@ module.exports = {
   getUnorderedList,
   getRichTextHyperlink,
   getRichTextListItem,
-  getRichTextNode
+  getRichTextNode,
+  getRichTextParagraphWithInlineType
 }
